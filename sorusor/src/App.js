@@ -1,9 +1,10 @@
 import "./App.css";
+import SoruSor from "./react_components/SoruSor";
 
 function App() {
   return (
-    <div>
-      <h1></h1>
+    <div className="App">
+      <SoruSor />
     </div>
   );
 }
