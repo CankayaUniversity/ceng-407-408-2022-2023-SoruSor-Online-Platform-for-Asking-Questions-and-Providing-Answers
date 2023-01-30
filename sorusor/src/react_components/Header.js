@@ -5,6 +5,7 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
+import { Avatar, Button } from "@mui/material";
 function Header() {
   return (
     <div className="SoruSorHeader">
@@ -32,6 +33,10 @@ function Header() {
             <SearchIcon />
             <input type="text" placeholder="Search Questions" />
           </div>
+          <div className="SoruSorHeaderReminder">
+            <Avatar />
+          </div>
+          <Button>Add Question</Button>
         </div>
       </div>
     </div>
@@ -39,3 +44,4 @@ function Header() {
 }
 
 export default Header;
+//3857
