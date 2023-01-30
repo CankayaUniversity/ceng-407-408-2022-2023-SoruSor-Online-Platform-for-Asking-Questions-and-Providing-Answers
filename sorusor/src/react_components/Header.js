@@ -6,6 +6,7 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import { Avatar, Button } from "@mui/material";
+import "./css/SoruSorHeader.css";
 function Header() {
   return (
     <div className="SoruSorHeader">
@@ -44,4 +45,4 @@ function Header() {
 }
 
 export default Header;
-//3857
+//4125
