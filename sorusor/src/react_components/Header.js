@@ -13,32 +13,32 @@ function Header() {
       <div className="SoruSorHeaderContent">
         <div className="SoruSorHeaderLogo">
           <img src="" />
-          <div className="SoruSorHeaderIcons">
-            <div className="SoruSorHeaderIcon">
-              <HomeIcon />
-            </div>
-            <div className="SoruSorHeaderIcon">
-              <FeaturedPlayListIcon />
-            </div>
-            <div className="SoruSorHeaderIcon">
-              <AssignmentTurnedInIcon />
-            </div>
-            <div className="SoruSorHeaderIcon">
-              <PeopleAltIcon />
-            </div>
-            <div className="SoruSorHeaderIcon">
-              <NotificationsIcon />
-            </div>
-          </div>
-          <div className="SoruSorHeaderInput">
-            <SearchIcon />
-            <input type="text" placeholder="Search Questions" />
-          </div>
-          <div className="SoruSorHeaderReminder">
-            <Avatar />
-          </div>
-          <Button>Add Question</Button>
         </div>
+        <div className="SoruSorHeaderIcons">
+          <div className="SoruSorHeaderIcon">
+            <HomeIcon />
+          </div>
+          <div className="SoruSorHeaderIcon">
+            <FeaturedPlayListIcon />
+          </div>
+          <div className="SoruSorHeaderIcon">
+            <AssignmentTurnedInIcon />
+          </div>
+          <div className="SoruSorHeaderIcon">
+            <PeopleAltIcon />
+          </div>
+          <div className="SoruSorHeaderIcon">
+            <NotificationsIcon />
+          </div>
+        </div>
+        <div className="SoruSorHeaderInput">
+          <SearchIcon />
+          <input type="text" placeholder="Search Questions" />
+        </div>
+        <div className="SoruSorHeaderReminder">
+          <Avatar />
+        </div>
+        <Button>Add Question</Button>
       </div>
     </div>
   );

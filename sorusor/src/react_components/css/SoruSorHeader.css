@@ -92,28 +92,24 @@
     cursor: pointer;
 }
 
-/* couldnt find what this is */
-.qHeader__Rem {
+.SoruSorHeaderReminder {
     display: flex;
     align-items: center;
     margin-left: 25px;
 }
 
-/* couldnt find what this is */
-.qHeader__Rem>.MuiSvgIcon-root {
+.SoruSorHeaderReminder>.MuiSvgIcon-root {
     font-size: xx-large;
     color: gray;
     margin-left: 25px;
     cursor: pointer;
 }
 
-/* couldnt find what this is */
-.qHeader__Rem>.MuiSvgIcon-root:hover {
+.qSoruSorHeaderReminder>.MuiSvgIcon-root:hover {
     color: #000;
 }
 
-/* couldnt find what this is */
-.qHeader__Rem>.MuiButton-root {
+.SoruSorHeaderReminder>.MuiButton-root {
     color: white;
     background: #222;
     text-transform: inherit;
@@ -121,11 +117,15 @@
     margin-left: 25px;
 }
 
-/* couldnt find what this is */
-.qHeader__Rem>.MuiButton-root:hover {
+.SoruSorHeaderReminder>.MuiButton-root:hover {
     color: #222;
     background: rgb(214, 214, 214);
 }
+
+
+
+
+/* couldnt find what these are */
 
 .modal__title {
     display: flex;
