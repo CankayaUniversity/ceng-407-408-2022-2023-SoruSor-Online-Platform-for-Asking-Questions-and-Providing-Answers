@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,38 @@
   to {
     transform: rotate(360deg);
   }
+} */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.btn:hover {
+  box-shadow: unset !important;
+}
+
+input[type="button"] {
+  outline: none !important;
+}
+
+button::selection {
+  outline: none !important;
+}
+
+.btn::selection {
+  outline: none;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+:root {
+  --vp: 0.052vw;
+  --vm: 0.278vw;
 }
