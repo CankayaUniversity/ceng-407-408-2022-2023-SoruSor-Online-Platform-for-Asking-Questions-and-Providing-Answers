@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar } from "@mui/material";
+import "./css/QuestionBox.css";
 
 function QuestionBox() {
   return (
@@ -8,7 +9,7 @@ function QuestionBox() {
         <Avatar />
       </div>
       <div className="QuestionBoxSoruSor">
-        <p>What Do You Want to Ask or Share?</p>
+        <h5>What Do You Want to Ask or Share?</h5>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionBox from "./QuestionBox";
+import "./css/Feed.css";
 
 function Feed() {
   return (
