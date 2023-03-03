@@ -34,17 +34,57 @@ function Post() {
           <MoreHorizOutlined />
         </div>
       </div>
-      <p>1 Answer</p>
-      <div className="postAnswer">
-        <div className="postAnswerContainer">
-          <div className="postAnswered">
+      <p
+        style={{
+          color: "rgba(0,0,0,0.5)",
+          fontSize: "12px",
+          fontWeight: "bold",
+          margin: "10px 0",
+        }}
+      >
+        1 Answer
+      </p>
+      <div
+        style={{
+          margin: "5px 0px 0px 0px ",
+          padding: "5px 0px 0px 20px",
+          borderTop: "1px solid lightgray",
+        }}
+        className="postAnswer"
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            padding: "10px 5px",
+            borderTop: "1px solid lightgray",
+          }}
+          className="postAnswerContainer"
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "10px",
+              fontSize: "12px",
+              fontWeight: 600,
+              color: "#888",
+            }}
+            className="postAnswered"
+          >
             <Avatar />
-            <div className="postAnswered-Info">
+            <div
+              style={{
+                margin: "0px 10px",
+              }}
+              className="postAnswered-Info"
+            >
               <p>Username</p>
               <span>Timestamp</span>
             </div>
           </div>
-          <div className="postAnswer-Answer">Test Answer</div>;
+          <div className="postAnswer-Answer">Test Answer</div>
         </div>
       </div>
     </div>
