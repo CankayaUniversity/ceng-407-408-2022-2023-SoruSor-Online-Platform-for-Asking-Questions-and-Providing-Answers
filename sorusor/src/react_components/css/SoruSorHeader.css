@@ -122,19 +122,14 @@
     background: rgb(214, 214, 214);
 }
 
-
-
-
-/* couldnt find what these are */
-
-.modal__title {
+/* .modalTitle {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
     border-bottom: 1px solid rgba(187, 187, 187, 0.5);
 }
 
-.modal__title>h5 {
+.modalTitle>h5 {
     color: gray;
     font-size: 20px;
     cursor: pointer;
@@ -142,23 +137,23 @@
     margin-right: 30px;
 }
 
-.modal__title>h5:hover {
+.modalTitle>h5:hover {
     color: #b92b27;
 }
 
-.modal__info {
+.modalInfo {
     display: flex;
     align-items: center;
     margin-top: 30px;
 }
 
-.modal__info>p {
+.modalInfo>p {
     margin-left: 10px;
     font-size: small;
     color: gray;
 }
 
-.modal__info>.modal__scope {
+.modalInfo>.modal__scope {
     display: flex;
     align-items: center;
     color: rgb(98, 98, 98);
@@ -167,8 +162,14 @@
     background-color: rgb(230, 230, 230);
     border-radius: 33px;
     cursor: pointer;
-}
+} */
 
+
+
+
+
+/* couldnt find what these are */
+/* 
 .modal__Field {
     display: flex;
     flex-direction: column;
@@ -238,4 +239,4 @@
     .qHeader__input {
         display: none;
     }
-}
+} */
