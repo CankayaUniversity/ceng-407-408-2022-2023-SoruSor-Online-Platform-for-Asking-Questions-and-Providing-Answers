@@ -5,7 +5,7 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
-import { Avatar, Button } from "@mui/material";
+import { Avatar, Button, Input } from "@mui/material";
 import "./css/SoruSorHeader.css";
 import { Modal } from "react-responsive-modal";
 import CloseIcon from "@material-ui/icons/Close";
@@ -14,6 +14,7 @@ import { ExpandMore, PeopleAltOutlined } from "@material-ui/icons";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inputUrl, setInputUrl] = useState("");
   const Close = <CloseIcon />;
 
   return (
@@ -71,6 +72,49 @@ function Header() {
               <p>Public</p>
               <ExpandMore />
             </div>
+          </div>
+          <div className="modalField">
+            <Input
+              type="text"
+              placeholder="Use what, how, why, etc. to begin your question."
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <input
+                type="text"
+                value={inputUrl}
+                onChange={(e) => setInputUrl(e.target.value)}
+                style={{
+                  margin: "5px 0",
+                  border: "1px solid lightgray",
+                  padding: "10px",
+                  outline: "2px solid #000",
+                }}
+                placeholder="Add a link that provides context, if desired."
+              />
+              {inputUrl !== "" && (
+                <img
+                  style={{
+                    height: "40vh",
+                    objectFit: "contain",
+                  }}
+                  src={inputUrl}
+                  alt="displayimage"
+                />
+              )}
+            </div>
+          </div>
+          <div className="modalButtons">
+            <button className="cancel" onClick={() => setIsModalOpen(false)}>
+              Cancel
+            </button>
+            <button type="submit" className="add">
+              Add Question
+            </button>
           </div>
         </Modal>
       </div>
