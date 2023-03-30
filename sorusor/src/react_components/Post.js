@@ -7,10 +7,20 @@ import {
   ShareOutlined,
 } from "@material-ui/icons";
 import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import "./css/Post.css";
 
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import CloseIcon from "@material-ui/icons/Close";
+
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 function Post() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const Close = <CloseIcon />;
+
   return (
     <div className="post">
       <div className="postInfo">
@@ -20,7 +30,42 @@ function Post() {
       </div>
       <div className="postBody">
         <p>Test Question?</p>
-        <button className="postBtnAnswer">Answer</button>
+        <button onClick={() => setIsModalOpen(true)} className="postBtnAnswer">
+          Answer
+        </button>
+        <Modal
+          open={isModalOpen}
+          closeIcon={Close}
+          onClose={() => setIsModalOpen(false)}
+          closeOnEsc
+          center
+          closeOnOverlayClick={false}
+          styles={{
+            overlay: {
+              height: "auto",
+            },
+          }}
+        >
+          <div className="modalQuestion">
+            <h1>Test Question</h1>
+            <p>
+              Asked by <span className="name">Username</span> on{" "}
+              <span className="name">timestamp</span>{" "}
+            </p>
+          </div>
+          <div className="modalAnswer">
+            <ReactQuill placeholder="Type Your Answer" />
+          </div>
+          <div className="modalButtons">
+            {" "}
+            <button className="cancel" onClick={() => setIsModalOpen(false)}>
+              Cancel
+            </button>
+            <button type="submit" className="add">
+              Add Question
+            </button>
+          </div>
+        </Modal>
       </div>
       <div className="postFooter">
         <div className="postFooterActions">

@@ -125,36 +125,36 @@
 
 
 
-.modal__question {
+.modalQuestion {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
 }
 
-.modal__question > h1 {
+.modalQuestion > h1 {
   color: #8f1f1b;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.modal__question > p {
+.modalQuestion > p {
   color: gray;
   font-size: small;
 }
 
-.modal__question > p > .name {
+.modalQuestion > p > .name {
   color: black;
   font-weight: bold;
 }
 
-.modal__answer {
+.modalAnswer {
   display: flex;
   padding-top: 20px;
   flex: 1;
 }
 
-.modal__answer > textarea {
+.modalAnswer > textarea {
   width: 100%;
   height: 200px;
   padding: 5px;
@@ -162,7 +162,7 @@
   color: black;
 }
 
-.modal__button {
+.modalButtons {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -171,7 +171,7 @@
   width: 100%;
 }
 
-.modal__button > .cancle {
+.modalButtons > .cancel {
   border: none;
   margin-top: 10px;
   outline: none;
@@ -182,10 +182,10 @@
   cursor: pointer;
 }
 
-.modal__button > .cancle:hover {
+.modalButtons > .cancel:hover {
   color: red;
 }
-.modal__button > .add {
+.modalButtons > .add {
   border: none;
   outline: none;
   margin-top: 5px;
@@ -197,7 +197,7 @@
   cursor: pointer;
   width: 50%;
 }
-.modal__button > .add:hover {
+.modalButtons > .add:hover {
   background-color: #eee;
   color: #222;
 }
