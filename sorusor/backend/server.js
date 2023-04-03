@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" })); // This line 
 //cors
 app.use((req, res, next) => {
   // This line adds a middleware function to handle all incoming requests
-  req.headers("Access-Control-Allow-Origin", "*"); // This line sets the Access-Control-Allow-Origin header to allow all origins
-  req.headers("Access-Control-Allow-Headers", "*"); // This line sets the Access-Control-Allow-Headers header to allow all headers
+  req.header("Access-Control-Allow-Origin", "*"); // This line sets the Access-Control-Allow-Origin header to allow all origins
+  req.header("Access-Control-Allow-Headers", "*"); // This line sets the Access-Control-Allow-Headers header to allow all headers
   next(); // This line calls the next middleware function in the stack
 });
 
