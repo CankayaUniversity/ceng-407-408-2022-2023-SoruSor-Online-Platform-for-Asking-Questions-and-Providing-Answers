@@ -12,4 +12,4 @@ const AnswerSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Questions", AnswerSchema);
+module.exports = mongoose.model("Answers", AnswerSchema);

@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api", router);
-app.use("/uploads", express.static(path.join(__dirname, "/../uploads"))); // This line serves static files in the "/uploads" directory
+app.use(express.static(path.join(__dirname, "/../frontend/build"))); // This line serves static files in the "/uploads" directory
 app.use("/uploads", express.static(path.join(__dirname, "/../frontend/build"))); // This line serves static files in the "/uploads" directory from the frontend build folder
 
 app.get("*", (req, res) => {
@@ -44,5 +44,3 @@ app.listen(process.env.PORT || 80, () => {
   // This line starts the server listening on the specified port or the default port (80)
   console.log(`Listening on port ${PORT}`); // This line logs a message to the console indicating the server is listening on the specified port
 });
-
-//1.20.20

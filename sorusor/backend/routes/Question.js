@@ -32,4 +32,35 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    await questionDB
+      .aggregate([
+        {
+          $lookup: {
+            from: "answers", //collection to join
+            localField: "_id", //field from input document
+            foreignField: "questionId",
+            as: "allAnswers", //output array field
+          },
+        },
+      ])
+      .exec()
+      .then((doc) => {
+        res.status(200).send(doc);
+      })
+      .catch((error) => {
+        res.status(500).send({
+          status: false,
+          message: "Unable to get the question details",
+        });
+      });
+  } catch (e) {
+    res.status(500).send({
+      status: false,
+      message: "Unexpected error",
+    });
+  }
+});
+
 module.exports = router;
