@@ -17,7 +17,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-function Post() {
+function Post({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const Close = <CloseIcon />;
 
