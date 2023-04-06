@@ -17,6 +17,16 @@ import CloseIcon from "@material-ui/icons/Close";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
+import ReactTimeAgo from "react-time-ago";
+
+function LastSeen({ date }) {
+  return (
+    <div>
+      <ReactTimeAgo date={date} locale="en-US" timeStyle="round" />
+    </div>
+  );
+}
+
 function Post({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const Close = <CloseIcon />;
@@ -26,47 +36,58 @@ function Post({ post }) {
       <div className="postInfo">
         <Avatar />
         <h4>User Name</h4>
-        <small>Time Stamp</small>
+
+        <small>
+          <LastSeen date={post?.createdAt} />
+        </small>
       </div>
       <div className="postBody">
-        <p>Test Question?</p>
-        <button onClick={() => setIsModalOpen(true)} className="postBtnAnswer">
-          Answer
-        </button>
-        <Modal
-          open={isModalOpen}
-          closeIcon={Close}
-          onClose={() => setIsModalOpen(false)}
-          closeOnEsc
-          center
-          closeOnOverlayClick={false}
-          styles={{
-            overlay: {
-              height: "auto",
-            },
-          }}
-        >
-          <div className="modalQuestion">
-            <h1>Test Question</h1>
-            <p>
-              Asked by <span className="name">Username</span> on{" "}
-              <span className="name">timestamp</span>{" "}
-            </p>
-          </div>
-          <div className="modalAnswer">
-            <ReactQuill placeholder="Type Your Answer" />
-          </div>
-          <div className="modalButtons">
-            {" "}
-            <button className="cancel" onClick={() => setIsModalOpen(false)}>
-              Cancel
-            </button>
-            <button type="submit" className="add">
-              Add Question
-            </button>
-          </div>
-        </Modal>
+        <div className="post__question">
+          <p>{post?.questionName}</p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="postBtnAnswer"
+          >
+            Answer
+          </button>
+          <Modal
+            open={isModalOpen}
+            closeIcon={Close}
+            onClose={() => setIsModalOpen(false)}
+            closeOnEsc
+            center
+            closeOnOverlayClick={false}
+            styles={{
+              overlay: {
+                height: "auto",
+              },
+            }}
+          >
+            <div className="modalQuestion">
+              <h1>{post?.questionName}</h1>
+              <p>
+                Asked by <span className="name">Username</span> on{" "}
+                <span className="name">
+                  {new Date(post?.createdAt).toLocaleString()}
+                </span>{" "}
+              </p>
+            </div>
+            <div className="modalAnswer">
+              <ReactQuill placeholder="Type Your Answer" />
+            </div>
+            <div className="modalButtons">
+              {" "}
+              <button className="cancel" onClick={() => setIsModalOpen(false)}>
+                Cancel
+              </button>
+              <button type="submit" className="add">
+                Add Question
+              </button>
+            </div>
+          </Modal>
+        </div>
       </div>
+
       <div className="postFooter">
         <div className="postFooterActions">
           <ArrowUpwardOutlined />
@@ -87,7 +108,7 @@ function Post({ post }) {
           margin: "10px 0",
         }}
       >
-        1 Answer
+        {post?.allAnswers.length}
       </p>
       <div
         style={{
@@ -137,3 +158,5 @@ function Post({ post }) {
 }
 
 export default Post;
+
+//40.00
