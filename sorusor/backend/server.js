@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api", router);
-app.use(express.static(path.join(__dirname, "/../frontend/build"))); // This line serves static files in the "/uploads" directory
+app.use(express.static(path.join(__dirname, "/../frontend/build"))); // [PROBLEMATIC] This line serves static files in the "/uploads" directory
 app.use("/uploads", express.static(path.join(__dirname, "/../frontend/build"))); // This line serves static files in the "/uploads" directory from the frontend build folder
 
 app.get("*", (req, res) => {
