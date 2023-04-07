@@ -10,7 +10,7 @@ function Feed() {
     axios
       .get("/api/questions")
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data.reverse()); //last added question is seen at front
         setPosts(res.data);
       })
       .catch((e) => {

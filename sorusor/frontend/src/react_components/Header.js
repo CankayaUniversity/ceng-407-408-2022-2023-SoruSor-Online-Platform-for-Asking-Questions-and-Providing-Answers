@@ -36,6 +36,7 @@ function Header() {
         .then((res) => {
           console.log(res.data);
           alert(res.data.message);
+          window.location.href = "/";
         })
         .catch((e) => {
           console.log(e);
