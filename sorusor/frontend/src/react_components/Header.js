@@ -12,12 +12,19 @@ import CloseIcon from "@material-ui/icons/Close";
 import "react-responsive-modal/styles.css";
 import { ExpandMore, PeopleAltOutlined } from "@material-ui/icons";
 import axios from "axios";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
+import { logout, selectUser } from "../feature/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
   const [question, setQuestion] = useState("");
   const Close = <CloseIcon />;
+  const dispatch = useDispatch();
+
+  const user = useSelector(selectUser);
 
   const handleSubmit = async () => {
     if (question !== "") {
@@ -30,6 +37,7 @@ function Header() {
       const body = {
         questionName: question,
         questionUrl: inputUrl,
+        user: user,
       };
       await axios
         .post("/api/questions", body, config)
@@ -41,6 +49,19 @@ function Header() {
         .catch((e) => {
           console.log(e);
           alert("Error in adding question");
+        });
+    }
+  };
+
+  const handleLogout = () => {
+    if (window.confirm("Sure?")) {
+      signOut(auth)
+        .then(() => {
+          dispatch(logout());
+          console.log("Logged Out");
+        })
+        .catch(() => {
+          console.log("ERROR LOGOUT");
         });
     }
   };
@@ -73,7 +94,10 @@ function Header() {
           <input type="text" placeholder="Search Questions" />
         </div>
         <div className="SoruSorHeaderReminder">
-          <Avatar />
+          <span onClick={handleLogout}>
+            <Avatar src={user?.photo} />
+            {/* //seeing the user photo from google */}
+          </span>
         </div>
         <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
         <Modal
@@ -94,7 +118,7 @@ function Header() {
             <h5>Share Link</h5>
           </div>
           <div className="modalInfo">
-            <Avatar className="avatar" />
+            <Avatar src={user?.photo} className="avatar" />
             <div className="modalScop">
               <PeopleAltOutlined />
               <p>Public</p>
