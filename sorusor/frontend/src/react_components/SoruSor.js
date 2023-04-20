@@ -22,4 +22,4 @@ function SoruSor() {
 }
 
 export default SoruSor;
-//5018
+
