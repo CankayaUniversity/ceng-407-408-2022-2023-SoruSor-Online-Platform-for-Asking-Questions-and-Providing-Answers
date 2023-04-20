@@ -16,9 +16,13 @@ function Login() {
   return (
     <div className="loginContainer">
       <div className="loginContent">
-        <img src="" alt="logo" />
+        <h1 className="loginTitle">Soru Sor</h1>
+        <p className="loginSubtitle">
+          A place to ask questions and gain knowledge
+        </p>
+        <img src="" alt="logo" className="loginLogo" />
         <button onClick={handleSubmit} className="btn-login">
-          Login
+          Login with Google
         </button>
       </div>
     </div>

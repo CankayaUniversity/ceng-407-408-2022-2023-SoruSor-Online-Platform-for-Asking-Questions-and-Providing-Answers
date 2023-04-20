@@ -48,7 +48,7 @@ function Header() {
         })
         .catch((e) => {
           console.log(e);
-          alert("Error in asking question");
+          alert("Error in asking question!");
         });
     }
   };
