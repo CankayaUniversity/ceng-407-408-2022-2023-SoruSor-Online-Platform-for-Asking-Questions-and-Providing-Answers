@@ -6,6 +6,9 @@
     width: 100vw;
     box-sizing: border-box;
     background-color: #ffeedb;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
 .loginContent {
@@ -19,26 +22,35 @@
 }
 
 .loginTitle {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 36px;
+    font-weight: 800;
     margin-bottom: 10px;
     color: #96705b;
 }
 
 .loginSubtitle {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 20px;
-    color: #333;
+    color: #96705b;
+    opacity: 0.8;
 }
 
 .loginLogo {
-    width: 200px;
+    width: 100px;
     object-fit: contain;
-    margin: 20px;
+    margin: 10px;
+}
+
+.googleLogo {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .btn-login {
+    display: flex;
+    align-items: center;
     padding: 10px 20px;
     margin: 50px 0px;
     background-color: #96705b;
@@ -55,4 +67,4 @@
 
 .btn-login:hover {
     background-color: #6a4a3b;
-} 
+}
