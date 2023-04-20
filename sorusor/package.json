@@ -23,6 +23,7 @@
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
     "react-redux": "^8.0.5",
+    "react-router-dom": "^6.10.0",
     "react-time-ago": "^7.2.1"
   }
 }

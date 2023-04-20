@@ -9,7 +9,6 @@ import "./css/SoruSor.css";
 function SoruSor() {
   return (
     <div className="SoruSor">
-      <Header />
       <div className="SoruSorContents">
         <div className="SoruSorContent">
           <SidebarOptions />
@@ -22,4 +21,3 @@ function SoruSor() {
 }
 
 export default SoruSor;
-

@@ -2,8 +2,7 @@
 .SoruSor {
     width: 100%;
     min-width: fit-content;
-    background-color: #ffeedb;
-    /* Add this line to change the background color */
+    background-color: rgb(52, 39, 35)
 }
 
 .SoruSorContents {

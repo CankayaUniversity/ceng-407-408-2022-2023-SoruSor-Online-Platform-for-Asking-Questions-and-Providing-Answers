@@ -17,6 +17,8 @@ import { signOut } from "firebase/auth";
 import { logout, selectUser } from "../feature/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
@@ -74,19 +76,29 @@ function Header() {
         </div>
         <div className="SoruSorHeaderIcons">
           <div className="SoruSorHeaderIcon">
-            <HomeIcon />
+            <Link to="/">
+              <HomeIcon />
+            </Link>
           </div>
           <div className="SoruSorHeaderIcon">
-            <FeaturedPlayListIcon />
+            <Link to="/featured-playlist">
+              <FeaturedPlayListIcon />
+            </Link>
           </div>
           <div className="SoruSorHeaderIcon">
-            <AssignmentTurnedInIcon />
+            <Link to="/assignment">
+              <AssignmentTurnedInIcon />
+            </Link>
           </div>
           <div className="SoruSorHeaderIcon">
-            <PeopleAltIcon />
+            <Link to="/people">
+              <PeopleAltIcon />
+            </Link>
           </div>
           <div className="SoruSorHeaderIcon">
-            <NotificationsIcon />
+            <Link to="/notifications">
+              <NotificationsIcon />
+            </Link>
           </div>
         </div>
         <div className="SoruSorHeaderInput">
@@ -99,7 +111,12 @@ function Header() {
             {/* //seeing the user photo from google */}
           </span>
         </div>
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        <button
+          className="addQuestionButton"
+          onClick={() => setIsModalOpen(true)}
+        >
+          Add Question
+        </button>
         <Modal
           open={isModalOpen}
           closeIcon={Close}
