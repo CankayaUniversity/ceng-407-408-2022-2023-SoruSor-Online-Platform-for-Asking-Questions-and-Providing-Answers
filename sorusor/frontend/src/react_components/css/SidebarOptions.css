@@ -1,6 +1,8 @@
 .sidebarOptions {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
+    flex: 0.2;
 }
 
 .sidebarOption {

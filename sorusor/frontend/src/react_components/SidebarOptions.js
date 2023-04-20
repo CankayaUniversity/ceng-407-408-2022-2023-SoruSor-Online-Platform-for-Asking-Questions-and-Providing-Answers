@@ -12,6 +12,7 @@ import music from "../../src/SoruSorDesign/Communities/music.png";
 import psychology from "../../src/SoruSorDesign/Communities/psychology.png";
 import science from "../../src/SoruSorDesign/Communities/science.png";
 import technology from "../../src/SoruSorDesign/Communities/technology.png";
+import discovercommunities from "../../src/SoruSorDesign/Communities/discovercommunities.png";
 
 function SidebarOptions() {
   return (
@@ -66,7 +67,7 @@ function SidebarOptions() {
         <p>Education</p>
       </div>
       <div className="sidebarOption">
-        <Add />
+        <img src={discovercommunities} alt="" />
         <p className="text">Discover Spaces</p>
       </div>
     </div>

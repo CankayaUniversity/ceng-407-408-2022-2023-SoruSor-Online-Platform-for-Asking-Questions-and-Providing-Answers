@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import SidebarOptions from "./SidebarOptions";
 import Feed from "./Feed";
 import Widget from "./Widget";
 
@@ -12,7 +12,7 @@ function SoruSor() {
       <Header />
       <div className="SoruSorContents">
         <div className="SoruSorContent">
-          <Sidebar />
+          <SidebarOptions />
           <Feed />
           <Widget />
         </div>
