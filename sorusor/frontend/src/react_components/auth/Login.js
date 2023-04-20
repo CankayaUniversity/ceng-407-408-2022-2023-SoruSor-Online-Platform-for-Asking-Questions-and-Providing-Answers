@@ -31,6 +31,10 @@ function Login() {
           <img src={GoogleLogo} alt="Google Logo" className="googleLogo" />
           Login with Google
         </button>
+        <p className="termsAndPrivacy">
+          By continuing you indicate that you agree to <br /> Quora’s Terms of
+          Service and Privacy Policy. © SoruSor, Inc. 2023
+        </p>
       </div>
     </div>
   );

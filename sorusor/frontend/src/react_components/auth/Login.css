@@ -23,7 +23,7 @@
 
 .loginTitle {
     font-size: 36px;
-    font-weight: 800;
+    font-weight: bold;
     margin-bottom: 10px;
     color: #96705b;
 }
@@ -40,12 +40,6 @@
     width: 100px;
     object-fit: contain;
     margin: 10px;
-}
-
-.googleLogo {
-    width: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
 }
 
 .btn-login {
@@ -67,4 +61,20 @@
 
 .btn-login:hover {
     background-color: #6a4a3b;
+}
+
+.googleLogo {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    vertical-align: middle;
+}
+
+.termsAndPrivacy {
+    font-size: 14px;
+    font-weight: 400;
+    color: #96705b;
+    opacity: 0.6;
+    margin-top: 20px;
+    text-align: center;
 }
