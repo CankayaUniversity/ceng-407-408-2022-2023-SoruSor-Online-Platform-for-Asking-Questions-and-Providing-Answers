@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import QuestionBox from "./QuestionBox";
 import "./css/Feed.css";
 import Post from "./Post";
 import axios from "axios";
@@ -19,7 +18,6 @@ function Feed() {
   }, []);
   return (
     <div className="feed">
-      <QuestionBox />
       {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}

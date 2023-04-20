@@ -44,7 +44,7 @@ function Post({ post }) {
     setAnswer(value);
   };
 
-
+  //console.log(answer);
 
   const handleSubmit = async () => {
     if (post?._id && answer !== "") {
