@@ -1,7 +1,7 @@
 # ceng-407-408-2022-2023-SoruSor-Online-Platform-for-Asking-Questions-and-Providing-Answers
-
-
 SoruSor: Online Platform for Asking Questions and Providing Answers
+
+
 The demand for precise and effective question-answering systems has substantially increased in the modern world as online venues for asking and answering questions have risen in popularity.
 Dealing with inappropriate and objectionable information that violates user standards and community standards is one of the biggest issues in establishing such systems. This problem can be solved with the use of insult censor AI technology, which works by automatically identifying and removing offensive words.
 
