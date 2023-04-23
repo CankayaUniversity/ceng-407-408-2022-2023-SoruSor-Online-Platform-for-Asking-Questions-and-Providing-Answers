@@ -33,7 +33,7 @@ function Login() {
         </button>
         <p className="termsAndPrivacy">
           By continuing you indicate that you agree to <br /> Sorusor’s Terms of
-          Service and Privacy Policy. © SoruSor, Inc. 2023
+          Service and Privacy Policy. © SoruSor,Inc. 2023
         </p>
       </div>
     </div>
