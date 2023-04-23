@@ -32,7 +32,7 @@ function Login() {
           Login with Google
         </button>
         <p className="termsAndPrivacy">
-          By continuing you indicate that you agree to <br /> Quora’s Terms of
+          By continuing you indicate that you agree to <br /> Sorusor’s Terms of
           Service and Privacy Policy. © SoruSor, Inc. 2023
         </p>
       </div>

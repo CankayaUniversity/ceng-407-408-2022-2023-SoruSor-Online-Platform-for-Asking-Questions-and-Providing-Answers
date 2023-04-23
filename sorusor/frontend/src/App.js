@@ -16,6 +16,18 @@ import PeoplePage from "../src/react_components/navbarPages/Files/PeoplePage";
 import AssignmentPage from "../src/react_components/navbarPages/Files/AssignmentPage";
 import FeaturedPlayListPage from "../src/react_components/navbarPages/Files/FeaturedPlayListPage";
 
+import Psychology from "../src/react_components/sidebarPages/Files/Psychology";
+import History from "../src/react_components/sidebarPages/Files/History";
+import Business from "../src/react_components/sidebarPages/Files/Business";
+import Cooking from "../src/react_components/sidebarPages/Files/Cooking";
+import Music from "../src/react_components/sidebarPages/Files//Music";
+import Science from "../src/react_components/sidebarPages/Files//Science";
+import Health from "../src/react_components/sidebarPages/Files//Health";
+import Movies from "../src/react_components/sidebarPages/Files//Movies";
+import Technology from "../src/react_components/sidebarPages/Files//Technology";
+import Education from "../src/react_components/sidebarPages/Files//Education";
+import DiscoverSpaces from "../src/react_components/sidebarPages/Files/DiscoverSpaces";
+
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -50,6 +62,18 @@ function App() {
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/assignment" element={<AssignmentPage />} />
           <Route path="/featured-playlist" element={<FeaturedPlayListPage />} />
+
+          <Route path="/psychology" element={<Psychology />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/cooking" element={<Cooking />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/science" element={<Science />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/discoverspaces" element={<DiscoverSpaces />} />
         </Routes>
       </Router>
     </div>

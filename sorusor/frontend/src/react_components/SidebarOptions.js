@@ -14,62 +14,88 @@ import science from "../../src/SoruSorDesign/Communities/science.png";
 import technology from "../../src/SoruSorDesign/Communities/technology.png";
 import discovercommunities from "../../src/SoruSorDesign/Communities/discovercommunities.png";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 function SidebarOptions() {
   return (
     <div className="sidebarOptions">
-      <div className="sidebarOption">
-        <img src={history} alt="" />
-        <p>History</p>
-      </div>
+      <Link to="/history">
+        <div className="sidebarOption">
+          <img src={history} alt="" />
+          <p>History</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={business} alt="" />
+      <Link to="/business">
+        <div className="sidebarOption">
+          <img src={business} alt="" />
+          <p>Business</p>
+        </div>
+      </Link>
 
-        <p>Business</p>
-      </div>
-      <div className="sidebarOption">
-        <img src={psychology} alt="" />
-        <p>Psychology</p>
-      </div>
+      <Link to="/psychology">
+        <div className="sidebarOption">
+          <img src={psychology} alt="" />
+          <p>Psychology</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={cooking} alt="" />
-        <p>Cooking</p>
-      </div>
+      <Link to="/cooking">
+        <div className="sidebarOption">
+          <img src={cooking} alt="" />
+          <p>Cooking</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={music} alt="" />
-        <p>Music</p>
-      </div>
+      <Link to="/music">
+        <div className="sidebarOption">
+          <img src={music} alt="" />
+          <p>Music</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={science} alt="" />
-        <p>Science</p>
-      </div>
+      <Link to="/science">
+        <div className="sidebarOption">
+          <img src={science} alt="" />
+          <p>Science</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={health} alt="" />
-        <p>Health</p>
-      </div>
+      <Link to="/health">
+        <div className="sidebarOption">
+          <img src={health} alt="" />
+          <p>Health</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={movies} alt="" />
-        <p>Movies</p>
-      </div>
+      <Link to="/movies">
+        <div className="sidebarOption">
+          <img src={movies} alt="" />
+          <p>Movies</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={technology} alt="" />
-        <p>Technology</p>
-      </div>
+      <Link to="/technology">
+        <div className="sidebarOption">
+          <img src={technology} alt="" />
+          <p>Technology</p>
+        </div>
+      </Link>
 
-      <div className="sidebarOption">
-        <img src={education} alt="" />
-        <p>Education</p>
-      </div>
-      <div className="sidebarOption">
-        <img src={discovercommunities} alt="" />
-        <p className="text">Discover Spaces</p>
-      </div>
+      <Link to="/education">
+        <div className="sidebarOption">
+          <img src={education} alt="" />
+          <p>Education</p>
+        </div>
+      </Link>
+
+      <Link to="/discoverspaces">
+        <div className="sidebarOption">
+          <img src={discovercommunities} alt="" />
+          <p className="text">Discover Spaces</p>
+        </div>
+      </Link>
     </div>
   );
 }
