@@ -108,7 +108,7 @@ function Header() {
         <div className="SoruSorHeaderReminder">
           <span onClick={handleLogout}>
             <Avatar src={user?.photo} />
-            {/* //seeing the user photo from google.  */}
+            {/* //seeing the user photo from google. */}
           </span>
         </div>
         <button
