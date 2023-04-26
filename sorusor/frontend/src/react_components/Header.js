@@ -95,11 +95,6 @@ function Header() {
               <PeopleAltIcon />
             </Link>
           </div>
-          <div className="SoruSorHeaderIcon">
-            <Link to="/notifications">
-              <NotificationsIcon />
-            </Link>
-          </div>
         </div>
         <div className="SoruSorHeaderInput">
           <SearchIcon />
