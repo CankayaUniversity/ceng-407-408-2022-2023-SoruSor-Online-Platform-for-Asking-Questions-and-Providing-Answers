@@ -1,6 +1,8 @@
+// Import the React library and the CSS file for this component
 import React from "react";
 import "./css/WidgetContent.css";
 
+// Create a function-based component 
 function WidgetContent() {
   return (
     <div className="widget_Contents">
@@ -15,4 +17,5 @@ function WidgetContent() {
   );
 }
 
+// Export the component 
 export default WidgetContent;
