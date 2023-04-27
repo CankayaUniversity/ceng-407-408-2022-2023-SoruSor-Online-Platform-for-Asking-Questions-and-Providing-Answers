@@ -1,16 +1,16 @@
-import React from "react";
-import WidgetContent from "./WidgetContent";
-import "./css/Widget.css";
+import React from "react"; // Importing the React library
+import WidgetContent from "./WidgetContent"; // Importing the WidgetContent component
+import "./css/Widget.css"; // Importing the Widget CSS file
 
-function Widget() {
+function Widget() { // Defining the Widget component
   return (
-    <div className="widget">
-      <div className="widgetHeader">Hot Communities</div>
+    <div className="widget"> 
+      <div className="widgetHeader">Hot Communities</div> 
       <div className="widgetContents">
-        <WidgetContent />
+        <WidgetContent /> 
       </div>
     </div>
   );
 }
 
-export default Widget;
+export default Widget; // Exporting the Widget component as a default export
