@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "../src/react_components/Header";
 import HomePage from "../src/react_components/navbarPages/Files/HomePage";
-import NotificationsPage from "../src/react_components/navbarPages/Files/NotificationsPage";
 import PeoplePage from "../src/react_components/navbarPages/Files/PeoplePage";
 import AssignmentPage from "../src/react_components/navbarPages/Files/AssignmentPage";
 import FeaturedPlayListPage from "../src/react_components/navbarPages/Files/FeaturedPlayListPage";
@@ -58,7 +57,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/assignment" element={<AssignmentPage />} />
           <Route path="/featured-playlist" element={<FeaturedPlayListPage />} />

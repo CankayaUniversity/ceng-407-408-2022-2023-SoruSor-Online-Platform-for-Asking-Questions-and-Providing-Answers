@@ -3,7 +3,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import { Avatar, Button, Input } from "@mui/material";
 import "./css/SoruSorHeader.css";
