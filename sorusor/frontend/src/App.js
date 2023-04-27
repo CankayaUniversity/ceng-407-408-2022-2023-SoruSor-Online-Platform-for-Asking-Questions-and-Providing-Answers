@@ -1,3 +1,4 @@
+// Importing  packages
 import React, { useEffect } from "react";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,54 +29,62 @@ import Education from "../src/react_components/sidebarPages/Files//Education";
 import DiscoverSpaces from "../src/react_components/sidebarPages/Files/DiscoverSpaces";
 
 function App() {
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+// Getting the user object from the Redux store
+const user = useSelector(selectUser);
+// Creating a dispatch function
+const dispatch = useDispatch();
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (authUser) => {
-      if (authUser) {
-        dispatch(
-          login({
-            userName: authUser.displayName,
-            photo: authUser.photoURL,
-            email: authUser.email,
-            uid: authUser.uid,
-          })
-        );
-        console.log("AuthUser", authUser);
-      }
-    });
-  }, [dispatch]);
+useEffect(() => {
+// Listening to the authentication state change event
+onAuthStateChanged(auth, (authUser) => {
+if (authUser) {
+// Dispatching the login action to update the user state in Redux store
+dispatch(
+login({
+userName: authUser.displayName,
+photo: authUser.photoURL,
+email: authUser.email,
+uid: authUser.uid,
+})
+);
+console.log("AuthUser", authUser);
+}
+});
+}, [dispatch]);
 
-  if (!user) {
-    return <Login />;
-  }
+// If user object is not available, show the login page
+if (!user) {
+return <Login />;
+}
 
-  return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/people" element={<PeoplePage />} />
-          <Route path="/assignment" element={<AssignmentPage />} />
-          <Route path="/featured-playlist" element={<FeaturedPlayListPage />} />
+return (
+<div className="App">
+<Router>
+<Header />
+<Routes>
+<Route path="/" element={<HomePage />} />
+<Route path="/people" element={<PeoplePage />} />
+<Route path="/assignment" element={<AssignmentPage />} />
+<Route path="/featured-playlist" element={<FeaturedPlayListPage />} />
 
-          <Route path="/psychology" element={<Psychology />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/business" element={<Business />} />
-          <Route path="/cooking" element={<Cooking />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/science" element={<Science />} />
-          <Route path="/health" element={<Health />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/technology" element={<Technology />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/discoverspaces" element={<DiscoverSpaces />} />
-        </Routes>
-      </Router>
-    </div>
-  );
+
+
+      <Route path="/psychology" element={<Psychology />} />
+      <Route path="/history" element={<History />} />
+      <Route path="/business" element={<Business />} />
+      <Route path="/cooking" element={<Cooking />} />
+      <Route path="/music" element={<Music />} />
+      <Route path="/science" element={<Science />} />
+      <Route path="/health" element={<Health />} />
+      <Route path="/movies" element={<Movies />} />
+      <Route path="/technology" element={<Technology />} />
+      <Route path="/education" element={<Education />} />
+      <Route path="/discoverspaces" element={<DiscoverSpaces />} />
+    </Routes>
+  </Router>
+</div>
+
+);
 }
 
 export default App;
