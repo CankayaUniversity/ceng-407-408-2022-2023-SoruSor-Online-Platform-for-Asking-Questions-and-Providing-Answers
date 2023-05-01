@@ -118,6 +118,9 @@ function Header() {
           closeOnEsc
           center
           closeOnOverlayClick={false}
+          classNames={{
+            modal: "customModal",
+          }}
           styles={{
             overlay: {
               height: "auto",
@@ -130,11 +133,6 @@ function Header() {
           </div>
           <div className="modalInfo">
             <Avatar src={user?.photo} className="avatar" />
-            <div className="modalScop">
-              <PeopleAltOutlined />
-              <p>Public</p>
-              <ExpandMore />
-            </div>
           </div>
           <div className="modalField">
             <Input

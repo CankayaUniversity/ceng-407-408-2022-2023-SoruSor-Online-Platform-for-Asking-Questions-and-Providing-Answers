@@ -242,3 +242,7 @@
     background-color: rgb(214, 214, 214);
     border-color: rgb(214, 214, 214);
 }
+
+.customModal {
+    background-color: #786c64 !important;
+}
