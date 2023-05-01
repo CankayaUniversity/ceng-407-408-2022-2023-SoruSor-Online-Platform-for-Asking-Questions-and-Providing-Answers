@@ -11,24 +11,26 @@ import CloseIcon from "@material-ui/icons/Close";
 import "react-responsive-modal/styles.css";
 import { ExpandMore, PeopleAltOutlined } from "@material-ui/icons";
 import axios from "axios";
-import { auth } from "../firebase";
-import { signOut } from "firebase/auth";
-import { logout, selectUser } from "../feature/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../firebase"; // Firebase authentication module
+import { signOut } from "firebase/auth"; // Firebase signOut function
+import { logout, selectUser } from "../feature/userSlice"; 
+import { useDispatch, useSelector } from "react-redux"; 
 
 import { Link } from "react-router-dom";
 
 function Header() {
+  // Local state for handling modal visibility and form input values
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
   const [question, setQuestion] = useState("");
   const Close = <CloseIcon />;
-  const dispatch = useDispatch();
 
-  const user = useSelector(selectUser);
+  const dispatch = useDispatch(); // Redux dispatch function
+  const user = useSelector(selectUser); 
 
+  // Function to handle form submission when user adds a new question
   const handleSubmit = async () => {
-    if (question !== "") {
+    if (question !== "") { // Ensure question is not empty
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -38,27 +40,28 @@ function Header() {
       const body = {
         questionName: question,
         questionUrl: inputUrl,
-        user: user,
+        user: user, // Include user object in request body
       };
       await axios
-        .post("/api/questions", body, config)
+        .post("/api/questions", body, config) // Send POST request to backend  to add new question
         .then((res) => {
           console.log(res.data);
-          alert(res.data.message);
-          window.location.href = "/";
+          alert(res.data.message); // Display success message to user
+          window.location.href = "/"; // Reload the page to show new question
         })
         .catch((e) => {
           console.log(e);
-          alert("Error in asking question!");
+          alert("Error in asking question!"); // Display error message to user
         });
     }
   };
 
+  // Function to handle user logout
   const handleLogout = () => {
-    if (window.confirm("Sure?")) {
-      signOut(auth)
+    if (window.confirm("Sure?")) { // Prompt user to confirm logout action
+      signOut(auth) // Call Firebase signOut function
         .then(() => {
-          dispatch(logout());
+          dispatch(logout()); // Dispatch Redux action to reset user state
           console.log("Logged Out");
         })
         .catch(() => {
