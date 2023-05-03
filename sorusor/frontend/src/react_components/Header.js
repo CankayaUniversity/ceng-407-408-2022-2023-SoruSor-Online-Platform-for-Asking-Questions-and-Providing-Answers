@@ -13,8 +13,8 @@ import { ExpandMore, PeopleAltOutlined } from "@material-ui/icons";
 import axios from "axios";
 import { auth } from "../firebase"; // Firebase authentication module
 import { signOut } from "firebase/auth"; // Firebase signOut function
-import { logout, selectUser } from "../feature/userSlice"; 
-import { useDispatch, useSelector } from "react-redux"; 
+import { logout, selectUser } from "../feature/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
@@ -26,11 +26,12 @@ function Header() {
   const Close = <CloseIcon />;
 
   const dispatch = useDispatch(); // Redux dispatch function
-  const user = useSelector(selectUser); 
+  const user = useSelector(selectUser);
 
   // Function to handle form submission when user adds a new question
   const handleSubmit = async () => {
-    if (question !== "") { // Ensure question is not empty
+    if (question !== "") {
+      // Ensure question is not empty
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +59,8 @@ function Header() {
 
   // Function to handle user logout
   const handleLogout = () => {
-    if (window.confirm("Sure?")) { // Prompt user to confirm logout action
+    if (window.confirm("Sure?")) {
+      // Prompt user to confirm logout action
       signOut(auth) // Call Firebase signOut function
         .then(() => {
           dispatch(logout()); // Dispatch Redux action to reset user state

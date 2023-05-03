@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const AnswerSchema = new mongoose.Schema({
   answer: String,
@@ -13,4 +13,4 @@ const AnswerSchema = new mongoose.Schema({
   user: Object,
 });
 
-module.exports = mongoose.model("Answers", AnswerSchema);
+export default mongoose.model("Answers", AnswerSchema);

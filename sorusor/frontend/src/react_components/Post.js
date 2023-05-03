@@ -45,10 +45,11 @@ function Post({ post }) {
     // handleQuill function sets the state of answer to the value passed as parameter
     setAnswer(value);
   };
-// console.log(answer);
+  // console.log(answer);
   const handleSubmit = async () => {
     // handleSubmit function is called when the user submits an answer to a question
-    if (post?._id && answer !== "") { // check if the post ID and answer are valid
+    if (post?._id && answer !== "") {
+      // check if the post ID and answer are valid
       const config = {
         headers: {
           "Content-Type": "application/json", // set request header to application/json

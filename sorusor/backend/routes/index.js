@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import questionRouter from "./Question.js";
+import answerRouter from "./Answer.js";
 
-const questionRouter = require("./Question");
-const answerRouter = require("./Answer");
+const router = express.Router();
 
 router.get("/", (req, res) => {
   res.send("This api is reserved for sorusor");
@@ -11,4 +11,4 @@ router.get("/", (req, res) => {
 router.use("/questions", questionRouter);
 router.use("/answers", answerRouter);
 
-module.exports = router;
+export default router;

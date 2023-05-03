@@ -1,10 +1,21 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import answerDB from "../models/Answer.js";
+import analyzeText from "../utils/perspectiveAPI.js";
 
-const answerDB = require("../models/Answer");
+const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
+    const toxicityScore = await analyzeText(
+      req.body.questionName || req.body.answer
+    );
+    if (toxicityScore >= 0.4) {
+      return res.status(400).send({
+        status: false,
+        message: "Content not allowed",
+      });
+    }
+
     await answerDB
       .create({
         answer: req.body.answer,
@@ -31,4 +42,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

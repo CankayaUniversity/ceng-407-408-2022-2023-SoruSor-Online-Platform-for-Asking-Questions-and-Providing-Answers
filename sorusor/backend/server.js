@@ -1,46 +1,41 @@
-const express = require("express"); // This line imports the Express.js library
-const cors = require("cors"); // This line imports the CORS middleware
-const path = require("path"); // This line imports the Path module
-const app = express(); // This line creates a new Express application instance
-const bodyParser = require("body-parser"); // This line imports the Body Parser middleware
-const PORT = 80; // This line sets the port number to 80
-const database = require("./database");
-const router = require("./routes");
+import express from "express";
+import cors from "cors";
+import path from "path";
+import bodyParser from "body-parser";
+import database from "./database.js";
+import router from "./routes/index.js";
 
-//database connection
+const app = express();
+const PORT = 80;
+
 database.connect();
 
-//middleware
-app.use(bodyParser.json({ limit: "50mb" })); // This line adds a middleware to parse incoming JSON data with a limit of 50mb
-app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" })); // This line adds a middleware to parse incoming URL-encoded data with extended options and a limit of 50mb
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
-//cors
 app.use((req, res, next) => {
-  // This line adds a middleware function to handle all incoming requests
-  req.header("Access-Control-Allow-Origin", "*"); // This line sets the Access-Control-Allow-Origin header to allow all origins
-  req.header("Access-Control-Allow-Headers", "*"); // This line sets the Access-Control-Allow-Headers header to allow all headers
-  next(); // This line calls the next middleware function in the stack
+  req.header("Access-Control-Allow-Origin", "*");
+  req.header("Access-Control-Allow-Headers", "*");
+  next();
 });
 
-//routes
 app.use("/api", router);
-app.use(express.static(path.join(__dirname, "/../frontend/build"))); // [PROBLEMATIC] This line serves static files in the "/uploads" directory
-app.use("/uploads", express.static(path.join(__dirname, "/../frontend/build"))); // This line serves static files in the "/uploads" directory from the frontend build folder
+app.use(express.static(path.join(process.cwd(), "/../frontend/build")));
+app.use(
+  "/uploads",
+  express.static(path.join(process.cwd(), "/../frontend/build"))
+);
 
 app.get("*", (req, res) => {
-  // This line defines a route to handle all other requests and sends the index.html
   try {
-    // Try to execute the following block of code
-    res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`)); // This line sends the index.html file to the client
+    res.sendFile(path.join(`${process.cwd()}/../frontend/build/index.html`));
   } catch (e) {
-    res.send("Sorry! Error Occured!"); // This line sends a response message to the client indicating an error occurred
+    res.send("Sorry! Error Occured!");
   }
 });
 
-app.use(cors()); // This line enables Cross-Origin Resource Sharing (CORS) middleware
+app.use(cors());
 
-//server listening
 app.listen(process.env.PORT || 80, () => {
-  // This line starts the server listening on the specified port or the default port (80)
-  console.log(`Listening on port ${PORT}`); // This line logs a message to the console indicating the server is listening on the specified port
+  console.log(`Listening on port ${PORT}`);
 });

@@ -1,12 +1,28 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import questionDB from "../models/Question.js";
+import analyzeText from "../utils/perspectiveAPI.js";
 
-const questionDB = require("../models/Question");
+const router = express.Router();
 
 router.post("/", async (req, res) => {
   console.log(req.body);
 
   try {
+    const toxicityScore = await analyzeText(req.body.questionName);
+    console.log(
+      "Toxicity score for question:",
+      req.body.questionName,
+      "is",
+      toxicityScore
+    );
+
+    if (toxicityScore >= 0.4) {
+      return res.status(400).send({
+        status: false,
+        message: "Content not allowed",
+      });
+    }
+
     await questionDB
       .create({
         questionName: req.body.questionName,
@@ -35,6 +51,16 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
+    const toxicityScore = await analyzeText(
+      req.body.questionName || req.body.answer
+    );
+    if (toxicityScore >= 0.8) {
+      return res.status(400).send({
+        status: false,
+        message: "Content not allowed",
+      });
+    }
+
     await questionDB
       .aggregate([
         {
@@ -64,4 +90,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
