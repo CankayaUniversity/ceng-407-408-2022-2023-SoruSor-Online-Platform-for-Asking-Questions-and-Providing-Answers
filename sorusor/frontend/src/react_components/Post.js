@@ -70,6 +70,7 @@ function Post({ post }) {
         })
         .catch((e) => {
           console.log(e);
+          alert("Error occurred while adding the answer. (post.js)");
         });
     }
   };
