@@ -10,9 +10,9 @@ import { Avatar } from "@mui/material"; // import Avatar from Material UI
 import React, { useState } from "react"; // import React and useState hook
 import "./css/Post.css"; // import CSS file for Post component
 
-import { Modal } from "react-responsive-modal"; // import Modal component from react-responsive-modal
-import "react-responsive-modal/styles.css"; // import CSS file for react-responsive-modal
-import CloseIcon from "@material-ui/icons/Close"; // import CloseIcon from Material UI
+import { Modal } from "react-responsive-modal"; // import Modal component from react-responsive-modal.
+import "react-responsive-modal/styles.css"; // import CSS file for react-responsive-modal.
+import CloseIcon from "@material-ui/icons/Close"; // import CloseIcon from Material UI.
 
 import ReactQuill from "react-quill"; // import ReactQuill
 import "react-quill/dist/quill.snow.css"; // import CSS file for ReactQuill
