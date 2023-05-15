@@ -43,7 +43,7 @@ function Post({ post }) {
   const [answer, setAnswer] = useState(""); // useState hook to manage the state of answer
   const Close = <CloseIcon />; // define Close variable as the CloseIcon component from Material UI
 
-  onst [votes, setVotes] = useState(0);
+  const [votes, setVotes] = useState(0);
   const [upvoteClicked, setUpvoteClicked] = useState(false);
   const [downvoteClicked, setDownvoteClicked] = useState(false);
 
