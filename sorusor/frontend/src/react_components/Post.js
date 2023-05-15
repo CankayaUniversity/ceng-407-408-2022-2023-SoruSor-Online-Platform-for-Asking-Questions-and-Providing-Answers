@@ -103,7 +103,7 @@ function Post({ post }) {
         user: user,
       }; // define the body of the POST request
       await axios
-        .post("/api/answers", body, config) // make a POST request to the server with the answer dataz
+        .post("/api/answers", body, config) // make a POST request to the server with the answer data.
         .then((res) => {
           console.log(res.data);
           alert("Answer added.");

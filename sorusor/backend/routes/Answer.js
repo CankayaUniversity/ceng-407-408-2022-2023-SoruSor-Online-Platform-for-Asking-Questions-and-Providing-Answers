@@ -28,14 +28,14 @@ router.post("/", async (req, res) => {
           message: "Answer added successfuly",
         });
       })
-      .catch((e) => {// Handle any errors that occur
+      .catch((e) => {// Handle any errors from filtering system that occur
         res.status(400).send({
           status: false,
           message: "Bad request",
         });
       });
   } catch (e) {
-    res.status(500).send({
+    res.status(500).send({// Handle any other errors that occur
       status: false,
       message: "Error while adding answer",
     });
