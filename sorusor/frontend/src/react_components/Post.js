@@ -40,14 +40,20 @@ function Post({ post }) {
   const [answer, setAnswer] = useState(""); // useState hook to manage the state of answer
   const Close = <CloseIcon />; // define Close variable as the CloseIcon component from Material UI
 
-  const [votes, setVotes] = useState(0);
+  onst [votes, setVotes] = useState(0);
+  const [upvoteClicked, setUpvoteClicked] = useState(false);
+  const [downvoteClicked, setDownvoteClicked] = useState(false);
 
   const handleUpvote = () => {
     setVotes(votes + 1);
+    setUpvoteClicked(true);
+    setDownvoteClicked(false);
   };
 
   const handleDownvote = () => {
     setVotes(votes - 1);
+    setUpvoteClicked(false);
+    setDownvoteClicked(true);
   };
   
   const handleRepeat = () => {
@@ -174,11 +180,17 @@ function Post({ post }) {
       </div>
 
       <div className="postFooter">
-        <div className="postFooterActions">
-        <ArrowUpwardOutlined onClick={handleUpvote} />
-        <span>{votes}</span>
-        <ArrowDownwardOutlined onClick={handleDownvote} />
-        </div>
+      <div className="postFooterActions">
+      <ArrowUpwardOutlined
+        onClick={handleUpvote}
+        className={upvoteClicked ? 'upvoted' : ''}
+      />
+      <span>{votes}</span>
+      <ArrowDownwardOutlined
+        onClick={handleDownvote}
+        className={downvoteClicked ? 'downvoted' : ''}
+      />
+    </div>
         <RepeatOneOutlined onClick={handleRepeat} />
         <ChatBubbleOutline onClick={handleChat} /> 
         <div className="postFooterLeft">

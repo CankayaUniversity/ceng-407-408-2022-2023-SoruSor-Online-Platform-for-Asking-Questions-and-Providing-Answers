@@ -99,6 +99,10 @@
   justify-content: space-around;
   border-radius: 33px;
 }
+.postFooterActions .upvoted,
+.postFooterActions .downvoted {
+  color: rgb(0, 140, 255);
+}
 .postFooterActions > .MuiSvgIcon-root {
   color: gray;
   margin-right: 40px;
