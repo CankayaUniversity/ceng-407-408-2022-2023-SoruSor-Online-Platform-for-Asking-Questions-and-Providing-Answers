@@ -6,6 +6,7 @@ import {
   RepeatOneOutlined,
   ShareOutlined,
 } from "@material-ui/icons"; // import icons from Material UI
+import { ShareOutlined, TwitterIcon, FacebookIcon, InstagramIcon, TiktokIcon } from '@material-ui/icons';
 import { Avatar } from "@mui/material"; // import Avatar from Material UI
 import React, { useState } from "react"; // import React and useState hook
 import "./css/Post.css"; // import CSS file for Post component
@@ -39,6 +40,38 @@ function Post({ post }) {
   const [answer, setAnswer] = useState(""); // useState hook to manage the state of answer
   const Close = <CloseIcon />; // define Close variable as the CloseIcon component from Material UI
 
+  const [votes, setVotes] = useState(0);
+
+  const handleUpvote = () => {
+    setVotes(votes + 1);
+  };
+
+  const handleDownvote = () => {
+    setVotes(votes - 1);
+  };
+  
+  const handleRepeat = () => {
+    // handle repeat logic here
+  };
+
+  const handleChat = () => {
+    // handle chat logic here
+  };
+
+  const [showShareModal, setShowShareModal] = useState(false);
+
+  const handleShareClick = () => {
+    setShowShareModal(true);
+  };
+
+  const handlePlatformClick = (platform) => {
+    // handle platform share logic here
+    // using the selected platform argument
+    setShowShareModal(false);
+  };
+  const handleMore = () => {
+    // handle more options logic here
+  };
   const user = useSelector(selectUser); // useSelector hook to select user data from the Redux store
 
   const handleQuill = (value) => {
@@ -142,14 +175,24 @@ function Post({ post }) {
 
       <div className="postFooter">
         <div className="postFooterActions">
-          <ArrowUpwardOutlined />
-          <ArrowDownwardOutlined />
+        <ArrowUpwardOutlined onClick={handleUpvote} />
+        <span>{votes}</span>
+        <ArrowDownwardOutlined onClick={handleDownvote} />
         </div>
-        <RepeatOneOutlined />
-        <ChatBubbleOutline />
+        <RepeatOneOutlined onClick={handleRepeat} />
+        <ChatBubbleOutline onClick={handleChat} /> 
         <div className="postFooterLeft">
-          <ShareOutlined />
-          <MoreHorizOutlined />
+        <ShareOutlined onClick={handleShareClick} />
+
+      {showShareModal && (
+        <div>
+          <TwitterIcon onClick={() => handlePlatformClick('twitter')} />
+          <FacebookIcon onClick={() => handlePlatformClick('facebook')} />
+          <InstagramIcon onClick={() => handlePlatformClick('instagram')} />
+          <TiktokIcon onClick={() => handlePlatformClick('tiktok')} />
+        </div>
+      )}
+        <MoreHorizOutlined onClick={handleMore} />
         </div>
       </div>
       <p
