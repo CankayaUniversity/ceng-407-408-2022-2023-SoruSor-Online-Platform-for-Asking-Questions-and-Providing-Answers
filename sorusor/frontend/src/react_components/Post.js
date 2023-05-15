@@ -61,12 +61,12 @@ function Post({ post }) {
         user: user,
       }; // define the body of the POST request
       await axios
-        .post("/api/answers", body, config) // make a POST request to the server with the answer data
+        .post("/api/answers", body, config) // make a POST request to the server with the answer dataz
         .then((res) => {
           console.log(res.data);
           alert("Answer added.");
           setIsModalOpen(false);
-          window.location.href = "/"; // redirect to the home page after submitting the answer
+          window.location.href = "/"; // redirect to the home page after submitting the answer.
         })
         .catch((e) => {
           console.log(e);
