@@ -11,3 +11,4 @@ const reportWebVitals = onPerfEntry => {
 };
 
 export default reportWebVitals;
+// Call web-vitals functions with onPerfEntry function as argument
