@@ -47,7 +47,7 @@ function Post({ post }) {
   };
   // console.log(answer);
   const handleSubmit = async () => {
-    // handleSubmit function is called when the user submits an answer to a question
+    // handleSubmit function is called when the user submits an answer to a question.
     if (post?._id && answer !== "") {
       // check if the post ID and answer are valid
       const config = {
