@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose";// This line imports the Mongoose library for MongoDB interactions
 
+// This is the Question schema definition..It includes the question text, question ID,creation date, and user object.
 const QuestionSchema = new mongoose.Schema({
   questionName: String,
   questionUrl: String,

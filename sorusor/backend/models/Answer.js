@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose";// This line imports the Mongoose library for MongoDB interactions
 
+//This is the schema for answers.It includes the answer text, question ID,creation date, and user object.
 const AnswerSchema = new mongoose.Schema({
   answer: String,
   questionId: {

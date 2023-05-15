@@ -1,13 +1,13 @@
-import express from "express";
-import questionDB from "../models/Question.js";
-import analyzeText from "../utils/perspectiveAPI.js";
+import express from "express";// This line imports the Express library for building web applications
+import questionDB from "../models/Question.js";// Importing the Question model from the Question.js file
+import analyzeText from "../utils/perspectiveAPI.js";// Importing function to analyze text using Perspective API
 
-const router = express.Router();
-
+const router = express.Router();// Set up the router
+// Define a route to handle POST requests to add a new question
 router.post("/", async (req, res) => {
   console.log(req.body);
 
-  try {
+  try {// Analyze the text using the Perspective API
     const toxicityScore = await analyzeText(req.body.questionName);
     console.log(
       "Toxicity score for question:",
@@ -16,13 +16,13 @@ router.post("/", async (req, res) => {
       toxicityScore
     );
 
-    if (toxicityScore >= 0.4) {
+    if (toxicityScore >= 0.4) {// If the toxicity score is above 0.4, reject the request
       return res.status(400).send({
         status: false,
         message: "Content not allowed",
       });
     }
-
+ // Create a new question in the database
     await questionDB
       .create({
         questionName: req.body.questionName,
@@ -35,13 +35,13 @@ router.post("/", async (req, res) => {
           message: "Question is added",
         });
       })
-      .catch((err) => {
+      .catch((err) => {// Handle any errors from filtering system that occur
         res.status(400).send({
           status: false,
           message: "Bad format",
         });
       });
-  } catch (e) {
+  } catch (e) {// Handle any other errors that occur
     res.status(500).send({
       status: false,
       message: "Error while adding question",
@@ -50,17 +50,17 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  try {
+  try {// Analyze the text using the Perspective API again
     const toxicityScore = await analyzeText(
       req.body.questionName || req.body.answer
     );
-    if (toxicityScore >= 0.8) {
+    if (toxicityScore >= 0.8) {// If toxicity score is greater than or equal to 0.8, return an error response
       return res.status(400).send({
         status: false,
         message: "Content not allowed",
       });
     }
-
+// Perform an aggregation on the questionDB collection to join it with the answers collection
     await questionDB
       .aggregate([
         {
@@ -74,15 +74,15 @@ router.get("/", async (req, res) => {
       ])
       .exec()
       .then((doc) => {
-        res.status(200).send(doc);
+        res.status(200).send(doc);// Return the joined document
       })
-      .catch((error) => {
+      .catch((error) => {// Handle any errors from filtering system that occur
         res.status(500).send({
           status: false,
           message: "Unable to get the question details",
         });
       });
-  } catch (e) {
+  } catch (e) {// Handle any other errors that occur
     res.status(500).send({
       status: false,
       message: "Unexpected error",
