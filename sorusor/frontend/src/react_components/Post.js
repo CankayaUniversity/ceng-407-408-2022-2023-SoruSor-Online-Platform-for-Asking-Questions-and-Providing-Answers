@@ -5,8 +5,11 @@ import {
   MoreHorizOutlined,
   RepeatOneOutlined,
   ShareOutlined,
+  TwitterIcon, 
+  FacebookIcon, 
+  InstagramIcon, 
+  TiktokIcon 
 } from "@material-ui/icons"; // import icons from Material UI
-import { ShareOutlined, TwitterIcon, FacebookIcon, InstagramIcon, TiktokIcon } from '@material-ui/icons';
 import { Avatar } from "@mui/material"; // import Avatar from Material UI
 import React, { useState } from "react"; // import React and useState hook
 import "./css/Post.css"; // import CSS file for Post component
