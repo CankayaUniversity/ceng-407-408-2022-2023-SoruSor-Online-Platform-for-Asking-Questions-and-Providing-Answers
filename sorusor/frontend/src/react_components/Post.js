@@ -5,10 +5,10 @@ import {
   MoreHorizOutlined,
   RepeatOneOutlined,
   ShareOutlined,
-  TwitterIcon, 
-  FacebookIcon, 
-  InstagramIcon, 
-  TiktokIcon 
+  TwitterIcon,
+  FacebookIcon,
+  InstagramIcon,
+  TiktokIcon,
 } from "@material-ui/icons"; // import icons from Material UI
 import { Avatar } from "@mui/material"; // import Avatar from Material UI
 import React, { useState } from "react"; // import React and useState hook
@@ -58,7 +58,7 @@ function Post({ post }) {
     setUpvoteClicked(false);
     setDownvoteClicked(true);
   };
-  
+
   const handleRepeat = () => {
     // handle repeat logic here
   };
@@ -183,31 +183,56 @@ function Post({ post }) {
       </div>
 
       <div className="postFooter">
-      <div className="postFooterActions">
-      <ArrowUpwardOutlined
-        onClick={handleUpvote}
-        className={upvoteClicked ? 'upvoted' : ''}
-      />
-      <span>{votes}</span>
-      <ArrowDownwardOutlined
-        onClick={handleDownvote}
-        className={downvoteClicked ? 'downvoted' : ''}
-      />
-    </div>
-        <RepeatOneOutlined onClick={handleRepeat} />
-        <ChatBubbleOutline onClick={handleChat} /> 
-        <div className="postFooterLeft">
-        <ShareOutlined onClick={handleShareClick} />
-
-      {showShareModal && (
-        <div>
-          <TwitterIcon onClick={() => handlePlatformClick('twitter')} />
-          <FacebookIcon onClick={() => handlePlatformClick('facebook')} />
-          <InstagramIcon onClick={() => handlePlatformClick('instagram')} />
-          <TiktokIcon onClick={() => handlePlatformClick('tiktok')} />
+        <div className="postFooterActions">
+          <ArrowUpwardOutlined
+            onClick={handleUpvote}
+            className={upvoteClicked ? "upvoted" : ""}
+          />
+          <span>{votes}</span>
+          <ArrowDownwardOutlined
+            onClick={handleDownvote}
+            className={downvoteClicked ? "downvoted" : ""}
+          />
         </div>
-      )}
-        <MoreHorizOutlined onClick={handleMore} />
+        <RepeatOneOutlined onClick={handleRepeat} />
+        <ChatBubbleOutline onClick={handleChat} />
+        <div className="postFooterLeft">
+          <ShareOutlined onClick={handleShareClick} />
+
+          {showShareModal && (
+            <div>
+              <img
+                src="https://w7.pngwing.com/pngs/421/879/png-transparent-twitter-logo-social-media-iphone-organization-logo-twitter-computer-network-leaf-media.png"
+                alt="Twitter Icon"
+                width="24"
+                height="24"
+                onClick={() => handlePlatformClick("twitter")}
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
+                alt="Facebook Icon"
+                width="24"
+                height="24"
+                onClick={() => handlePlatformClick("facebook")}
+              />
+              <img
+                src="https://www.pagetraffic.com/blog/wp-content/uploads/2022/06/colored-instagram-logo-new.png"
+                alt="Instagram Icon"
+                width="24"
+                height="24"
+                onClick={() => handlePlatformClick("instagram")}
+              />
+              <img
+                src="https://w7.pngwing.com/pngs/170/404/png-transparent-tiktok-tiktok-logo-tiktok-icon-logo-application-icon-technology-communication-internet-social-media.png"
+                alt="TikTok Icon"
+                width="24"
+                height="24"
+                onClick={() => handlePlatformClick("tiktok")}
+              />
+            </div>
+          )}
+
+          <MoreHorizOutlined onClick={handleMore} />
         </div>
       </div>
       <p
