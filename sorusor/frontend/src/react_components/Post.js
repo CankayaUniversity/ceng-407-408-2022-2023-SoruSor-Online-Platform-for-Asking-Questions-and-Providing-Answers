@@ -40,7 +40,7 @@ function LastSeen({ date }) {
 
 function Post({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false); // useState hook to manage the state of isModalOpen
-  const [answer, setAnswer] = useState(""); 
+  const [answer, setAnswer] = useState(""); // useState hook to manage the state of answer
   const Close = <CloseIcon />; // define Close variable as the CloseIcon component from Material UI
 
   const [votes, setVotes] = useState(0);
