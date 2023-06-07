@@ -3,12 +3,12 @@ import {
   ArrowUpwardOutlined,
   ChatBubbleOutline,
   MoreHorizOutlined,
-  RepeatOneOutlined,
+  // RepeatOneOutlined,
   ShareOutlined,
-  TwitterIcon,
-  FacebookIcon,
-  InstagramIcon,
-  TiktokIcon,
+  // TwitterIcon,
+  // FacebookIcon,
+  // InstagramIcon,
+  // TiktokIcon,
 } from "@material-ui/icons"; // import icons from Material UI
 import { Avatar } from "@mui/material"; // import Avatar from Material UI
 import React, { useState } from "react"; // import React and useState hook
@@ -59,9 +59,9 @@ function Post({ post }) {
     setDownvoteClicked(true);
   };
 
-  const handleRepeat = () => {
-    // handle repeat logic here
-  };
+  // const handleRepeat = () => {
+  //   // handle repeat logic here
+  // };
 
   const handleChat = () => {
     // handle chat logic here
@@ -194,8 +194,8 @@ function Post({ post }) {
             className={downvoteClicked ? "downvoted" : ""}
           />
         </div>
-        <RepeatOneOutlined onClick={handleRepeat} />
-        <ChatBubbleOutline onClick={handleChat} />
+        {/* <RepeatOneOutlined onClick={handleRepeat} /> */}
+        <ChatBubbleOutline onClick={() => setIsModalOpen(true)} />
         <div className="postFooterLeft">
           <ShareOutlined onClick={handleShareClick} />
 
