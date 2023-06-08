@@ -15,6 +15,11 @@
 
 .TechnologyPageContent {
     display: flex;
-    flex-direction: row;
-    padding: 0px 10px;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 0px 10px;
+}
+
+.feed-placeholder {
+    width: 600px;
 }

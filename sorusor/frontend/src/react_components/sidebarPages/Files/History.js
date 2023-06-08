@@ -10,6 +10,8 @@ const History = () => {
       <div className="HistoryPageContents">
         <div className="HistoryPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
+
           <Widget />
         </div>
       </div>

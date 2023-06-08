@@ -10,6 +10,8 @@ const Movies = () => {
       <div className="MoviesPageContents">
         <div className="MoviesPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
+
           <Widget />
         </div>
       </div>

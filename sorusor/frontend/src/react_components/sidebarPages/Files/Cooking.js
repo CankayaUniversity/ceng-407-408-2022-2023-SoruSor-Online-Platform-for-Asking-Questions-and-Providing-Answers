@@ -11,6 +11,7 @@ const Cooking = () => {
       <div className="cookingPageContents">
         <div className="cookingPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
           <Widget />
         </div>
       </div>

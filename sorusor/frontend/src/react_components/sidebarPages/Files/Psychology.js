@@ -10,6 +10,8 @@ const Psychology = () => {
       <div className="PsychologyPageContents">
         <div className="PsychologyPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
+
           <Widget />
         </div>
       </div>

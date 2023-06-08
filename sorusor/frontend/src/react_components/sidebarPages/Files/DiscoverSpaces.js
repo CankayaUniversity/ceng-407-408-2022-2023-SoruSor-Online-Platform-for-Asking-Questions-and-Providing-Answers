@@ -10,6 +10,7 @@ const DiscoverSpaces = () => {
       <div className="DiscoverSpacesPageContents">
         <div className="DiscoverSpacesPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
           <Widget />
         </div>
       </div>

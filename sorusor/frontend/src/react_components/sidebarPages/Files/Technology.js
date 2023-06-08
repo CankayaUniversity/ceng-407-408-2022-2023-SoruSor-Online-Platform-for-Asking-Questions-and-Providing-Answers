@@ -10,6 +10,8 @@ const Technology = () => {
       <div className="TechnologyPageContents">
         <div className="TechnologyPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
+
           <Widget />
         </div>
       </div>

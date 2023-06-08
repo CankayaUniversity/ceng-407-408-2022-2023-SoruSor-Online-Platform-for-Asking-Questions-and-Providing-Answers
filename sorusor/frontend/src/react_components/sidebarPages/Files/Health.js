@@ -10,6 +10,7 @@ const Health = () => {
       <div className="HealthPageContents">
         <div className="HealthPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
           <Widget />
         </div>
       </div>

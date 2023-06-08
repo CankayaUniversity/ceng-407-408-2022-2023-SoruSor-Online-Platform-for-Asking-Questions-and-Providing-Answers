@@ -10,6 +10,7 @@ const Education = () => {
       <div className="EducationPageContents">
         <div className="EducationPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
           <Widget />
         </div>
       </div>

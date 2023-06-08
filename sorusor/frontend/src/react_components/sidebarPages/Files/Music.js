@@ -10,6 +10,8 @@ const Music = () => {
       <div className="MusicPageContents">
         <div className="MusicPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
+
           <Widget />
         </div>
       </div>

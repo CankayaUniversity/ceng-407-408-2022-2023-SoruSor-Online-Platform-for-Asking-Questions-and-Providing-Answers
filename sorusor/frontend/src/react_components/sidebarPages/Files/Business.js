@@ -10,6 +10,7 @@ const Business = () => {
       <div className="BusinessPageContents">
         <div className="BusinessPageContent">
           <SidebarOptions />
+          <div className="feed-placeholder" />
           <Widget />
         </div>
       </div>
