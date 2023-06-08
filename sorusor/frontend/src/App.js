@@ -1,5 +1,5 @@
 // Importing  packages
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import SoruSor from "./react_components/SoruSor";
@@ -28,16 +28,14 @@ import Education from "../src/react_components/sidebarPages/Files//Education";
 import DiscoverSpaces from "../src/react_components/sidebarPages/Files/DiscoverSpaces";
 
 function App() {
-  // Getting the user object from the Redux store
   const user = useSelector(selectUser);
-  // Creating a dispatch function
   const dispatch = useDispatch();
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    // Listening to the authentication state change event
-    onAuthStateChanged(auth, (authUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
       if (authUser) {
-        // Dispatching the login action to update the user state in Redux store
         dispatch(
           login({
             userName: authUser.displayName,
@@ -46,12 +44,17 @@ function App() {
             uid: authUser.uid,
           })
         );
-        console.log("AuthUser", authUser);
       }
+      setLoading(false);
     });
+
+    return () => unsubscribe();
   }, [dispatch]);
 
-  // If user object is not available, show the login page
+  if (loading) {
+    return <div>Loading...</div>; // Replace with your preferred loading UI
+  }
+
   if (!user) {
     return <Login />;
   }
