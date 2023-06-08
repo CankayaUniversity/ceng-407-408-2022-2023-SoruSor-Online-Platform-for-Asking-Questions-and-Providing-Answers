@@ -1,23 +1,32 @@
 .widget_Contents {
     display: flex;
+    flex-direction: column;
     cursor: pointer;
 }
 
 .widget_Content {
     margin: 5px;
-    display: flex;
     padding: 5px;
     border-bottom: 1px solid lightgray;
 }
 
-.widget_Content>img {
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageContainer {
+    margin-bottom: 10px;
+}
+
+.gameImage {
     height: 30px;
+    width: 30px;
     border-radius: 5px;
 }
 
-.widget_ContentTitle {
-    margin-left: 10px;
-}
+.widget_ContentTitle {}
 
 .widget_ContentTitle>h5 {
     color: rgb(70, 68, 68);

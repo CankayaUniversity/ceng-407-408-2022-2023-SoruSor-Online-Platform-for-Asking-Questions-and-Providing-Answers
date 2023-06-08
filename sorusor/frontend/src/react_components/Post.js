@@ -39,33 +39,58 @@ function LastSeen({ date }) {
 }
 
 function Post({ post }) {
+  console.log(post.voteCount);
   const [isModalOpen, setIsModalOpen] = useState(false); // useState hook to manage the state of isModalOpen
   const [answer, setAnswer] = useState(""); // useState hook to manage the state of answer
   const Close = <CloseIcon />; // define Close variable as the CloseIcon component from Material UI
 
-  const [votes, setVotes] = useState(0);
+  const [votes, setVotes] = useState(post.voteCount);
   const [upvoteClicked, setUpvoteClicked] = useState(false);
   const [downvoteClicked, setDownvoteClicked] = useState(false);
 
-  const handleUpvote = () => {
-    setVotes(votes + 1);
-    setUpvoteClicked(true);
-    setDownvoteClicked(false);
+  const handleUpvote = async () => {
+    const vote = upvoteClicked ? 0 : 1;
+    const url = `/api/questions/${post._id}/vote`;
+    const data = { userId: user.uid, vote };
+
+    try {
+      const response = await axios.post(url, data);
+
+      if (response.status === 200) {
+        setUpvoteClicked(vote === 1);
+        setDownvoteClicked(false);
+        setVotes(votes + vote);
+      } else {
+        throw new Error("Failed to upvote");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const handleDownvote = () => {
-    setVotes(votes - 1);
-    setUpvoteClicked(false);
-    setDownvoteClicked(true);
+  const handleDownvote = async () => {
+    const vote = downvoteClicked ? 0 : -1;
+    const url = `/api/questions/${post._id}/vote`;
+    const data = { userId: user.uid, vote };
+
+    try {
+      const response = await axios.post(url, data);
+
+      if (response.status === 200) {
+        setDownvoteClicked(vote === -1);
+        setUpvoteClicked(false);
+        setVotes(votes + vote);
+      } else {
+        throw new Error("Failed to downvote");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   // const handleRepeat = () => {
   //   // handle repeat logic here
   // };
-
-  const handleChat = () => {
-    // handle chat logic here
-  };
 
   const [showShareModal, setShowShareModal] = useState(false);
 
@@ -140,6 +165,13 @@ function Post({ post }) {
             Answer
           </button>
           <Modal
+            animationDuration={0}
+            classNames={{
+              enter: "fade-enter",
+              enterActive: "fade-enter-active",
+              exit: "fade-exit",
+              exitActive: "fade-exit-active",
+            }}
             open={isModalOpen}
             closeIcon={Close}
             onClose={() => setIsModalOpen(false)}

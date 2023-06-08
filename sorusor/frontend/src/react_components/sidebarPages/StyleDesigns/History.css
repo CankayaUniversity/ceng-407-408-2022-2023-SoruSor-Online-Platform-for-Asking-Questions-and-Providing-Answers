@@ -1,4 +1,20 @@
-.History{
+.History {
+    width: 100%;
+    min-height: 100vh;
     background-color: rgb(52, 39, 35);
-        min-height: 100vh;
+}
+
+.HistoryPageContents {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    min-width: fit-content;
+    width: 100%;
+}
+
+.HistoryPageContent {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px;
 }

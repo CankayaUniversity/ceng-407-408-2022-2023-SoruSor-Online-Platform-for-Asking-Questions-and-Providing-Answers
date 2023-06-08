@@ -244,5 +244,31 @@
 }
 
 .customModal {
-    background-color: #786c64 !important;
+    background-color: #ffffff !important;
+    border-radius: 30px;
+}
+
+.modalInfo .reminderText {
+    margin-left: 10px;
+    color: rgb(49, 49, 49);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
 }

@@ -89,11 +89,7 @@ function Header() {
               <FeaturedPlayListIcon />
             </Link>
           </div>
-          <div className="SoruSorHeaderIcon">
-            <Link to="/assignment">
-              <AssignmentTurnedInIcon />
-            </Link>
-          </div>
+
           <div className="SoruSorHeaderIcon">
             <Link to="/people">
               <PeopleAltIcon />
@@ -117,6 +113,7 @@ function Header() {
           Add Question
         </button>
         <Modal
+          animationDuration={0}
           open={isModalOpen}
           closeIcon={Close}
           onClose={() => setIsModalOpen(false)}
@@ -125,6 +122,10 @@ function Header() {
           closeOnOverlayClick={false}
           classNames={{
             modal: "customModal",
+            enter: "fade-enter",
+            enterActive: "fade-enter-active",
+            exit: "fade-exit",
+            exitActive: "fade-exit-active",
           }}
           styles={{
             overlay: {
@@ -132,13 +133,14 @@ function Header() {
             },
           }}
         >
-          <div className="modalTitle">
-            <h5>Add Question</h5>
-            <h5>Share Link</h5>
-          </div>
           <div className="modalInfo">
             <Avatar src={user?.photo} className="avatar" />
+            <div className="reminderText">
+              Pay Attention to not use any insult/curse words please! Otherwise,
+              our filter-detection system will prohibit you.
+            </div>
           </div>
+
           <div className="modalField">
             <Input
               value={question}

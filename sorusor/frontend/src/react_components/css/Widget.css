@@ -13,6 +13,12 @@
 
 .widgetHeader {
     border-bottom: 1px solid lightgray;
+    text-align: center;
+    background-color: #f9d55b;
+    color: #464646;
+    font-weight: bold;
+    padding: 10px 0;
+    letter-spacing: 1.1px;
 }
 
 .widgetHeader>h5 {

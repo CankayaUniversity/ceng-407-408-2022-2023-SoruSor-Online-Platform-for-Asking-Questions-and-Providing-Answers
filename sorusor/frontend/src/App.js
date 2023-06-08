@@ -13,7 +13,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "../src/react_components/Header";
 import HomePage from "../src/react_components/navbarPages/Files/HomePage";
 import PeoplePage from "../src/react_components/navbarPages/Files/PeoplePage";
-import AssignmentPage from "../src/react_components/navbarPages/Files/AssignmentPage";
 import FeaturedPlayListPage from "../src/react_components/navbarPages/Files/FeaturedPlayListPage";
 
 import Psychology from "../src/react_components/sidebarPages/Files/Psychology";
@@ -29,62 +28,58 @@ import Education from "../src/react_components/sidebarPages/Files//Education";
 import DiscoverSpaces from "../src/react_components/sidebarPages/Files/DiscoverSpaces";
 
 function App() {
-// Getting the user object from the Redux store
-const user = useSelector(selectUser);
-// Creating a dispatch function
-const dispatch = useDispatch();
+  // Getting the user object from the Redux store
+  const user = useSelector(selectUser);
+  // Creating a dispatch function
+  const dispatch = useDispatch();
 
-useEffect(() => {
-// Listening to the authentication state change event
-onAuthStateChanged(auth, (authUser) => {
-if (authUser) {
-// Dispatching the login action to update the user state in Redux store
-dispatch(
-login({
-userName: authUser.displayName,
-photo: authUser.photoURL,
-email: authUser.email,
-uid: authUser.uid,
-})
-);
-console.log("AuthUser", authUser);
-}
-});
-}, [dispatch]);
+  useEffect(() => {
+    // Listening to the authentication state change event
+    onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        // Dispatching the login action to update the user state in Redux store
+        dispatch(
+          login({
+            userName: authUser.displayName,
+            photo: authUser.photoURL,
+            email: authUser.email,
+            uid: authUser.uid,
+          })
+        );
+        console.log("AuthUser", authUser);
+      }
+    });
+  }, [dispatch]);
 
-// If user object is not available, show the login page
-if (!user) {
-return <Login />;
-}
+  // If user object is not available, show the login page
+  if (!user) {
+    return <Login />;
+  }
 
-return (
-<div className="App">
-<Router>
-<Header />
-<Routes>
-<Route path="/" element={<HomePage />} />
-<Route path="/people" element={<PeoplePage />} />
-<Route path="/assignment" element={<AssignmentPage />} />
-<Route path="/featured-playlist" element={<FeaturedPlayListPage />} />
+  return (
+    <div className="App">
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/people" element={<PeoplePage />} />
+          <Route path="/featured-playlist" element={<FeaturedPlayListPage />} />
 
-
-
-      <Route path="/psychology" element={<Psychology />} />
-      <Route path="/history" element={<History />} />
-      <Route path="/business" element={<Business />} />
-      <Route path="/cooking" element={<Cooking />} />
-      <Route path="/music" element={<Music />} />
-      <Route path="/science" element={<Science />} />
-      <Route path="/health" element={<Health />} />
-      <Route path="/movies" element={<Movies />} />
-      <Route path="/technology" element={<Technology />} />
-      <Route path="/education" element={<Education />} />
-      <Route path="/discoverspaces" element={<DiscoverSpaces />} />
-    </Routes>
-  </Router>
-</div>
-
-);
+          <Route path="/psychology" element={<Psychology />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/cooking" element={<Cooking />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/science" element={<Science />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/discoverspaces" element={<DiscoverSpaces />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
