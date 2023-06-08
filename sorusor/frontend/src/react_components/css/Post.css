@@ -47,18 +47,19 @@
   margin-left: auto;
   cursor: pointer;
   padding: 7px;
-  background-color: #222;
+  background-color: #312521 !important;
   outline: none;
   border: none;
-  color: lightgray;
+  color: #ffeedb !important;
   font-weight: 300;
   font-size: 14px;
   border-radius: 5px;
 }
 
 .postBtnAnswer:hover {
-  color: #222;
-  background: lightgray;
+  color: #312521 !important;
+  background: #ffeedb !important;
+  border-color: #312521 !important;
 }
 
 .post__question > p:hover {
@@ -137,7 +138,7 @@
 }
 
 .modalQuestion > h1 {
-  color: #8f1f1b;
+  color: #312521;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -209,7 +210,7 @@
 .react-responsive-modal-modal {
   /* width: 600px; */
   height: 400px;
-    border-radius: 3  0px;
+  border-radius: 30px;
 }
 
 .quill {
@@ -234,3 +235,4 @@
   opacity: 0;
   transition: opacity 300ms;
 }
+

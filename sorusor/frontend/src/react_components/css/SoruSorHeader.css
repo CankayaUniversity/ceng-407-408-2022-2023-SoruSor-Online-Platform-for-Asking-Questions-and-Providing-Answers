@@ -194,22 +194,24 @@
     margin-top: 10px;
     border: none;
     outline: none;
-    color: gray;
+    color: #312521 !important;
     font-weight: 500;
     padding: 10px;
     border-radius: 33px;
     cursor: pointer;
+    background-color: #ffeedb !important;
 }
 
 .modalButtons>.cancel:hover {
-    color: red;
+    color: #ffeedb !important;
+    background-color: #312521 !important;
 }
 
 .modalButtons>.add {
     border: none;
     outline: none;
     margin-top: 10px;
-    background-color: #222;
+    background-color: #312521 !important;
     color: white;
     font-weight: 700;
     padding: 10px;
@@ -219,8 +221,9 @@
 }
 
 .modalButtons>.add:hover {
-    background-color: #eee;
-    color: #222;
+    background-color: #ffeedb !important;
+    color: #312521 !important;
+    border-color: #312521 !important;
 }
 
 
@@ -238,9 +241,9 @@
 }
 
 .addQuestionButton:hover {
-    color: #222;
-    background-color: rgb(214, 214, 214);
-    border-color: rgb(214, 214, 214);
+    color: #312521;
+    background-color:#ffeedb;
+    border-color: #312521;
 }
 
 .customModal {
@@ -250,7 +253,7 @@
 
 .modalInfo .reminderText {
     margin-left: 10px;
-    color: rgb(49, 49, 49);
+    color: #312521;
     font-size: 14px;
     font-weight: 600;
 }
