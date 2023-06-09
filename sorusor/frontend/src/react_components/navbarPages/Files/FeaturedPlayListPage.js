@@ -1,7 +1,7 @@
 import React from "react";
 
 const FeaturedPlayListPage = () => {
-  return <div>FeaturedPlayListPage</div>;
+  return <div className="a"></div>;
 };
 
 export default FeaturedPlayListPage;

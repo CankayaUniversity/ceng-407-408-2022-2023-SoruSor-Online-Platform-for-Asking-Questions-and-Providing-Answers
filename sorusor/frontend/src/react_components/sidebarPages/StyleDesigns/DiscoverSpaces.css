@@ -1,25 +1,20 @@
-.DiscoverSpaces {
+body,
+html {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    min-height: 100vh;
-    background-color: rgb(52, 39, 35);
+    height: 100%;
 }
 
-.DiscoverSpacesPageContents {
-    display: flex;
-    justify-content: center;
-    padding: 50px 0;
-    background-color: rgba(0, 0, 0, 0.05);
-    min-width: fit-content;
+.a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-}
-
-.DiscoverSpacesPageContent {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 0px 10px;
-}
-
-.feed-placeholder {
-    width: 600px;
+    background-image: url("../../../SoruSorDesign/discoverspaces/desert.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }

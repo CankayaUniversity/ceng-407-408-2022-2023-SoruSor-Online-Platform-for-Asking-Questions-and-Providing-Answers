@@ -3,6 +3,7 @@ import "../StyleDesigns/Technology.css";
 import SidebarOptions from "../../SidebarOptions";
 import Widget from "../../Widget";
 import Feed from "../../Feed";
+import placeholderImage from "../../../SoruSorDesign/Sidebar/technology.png";
 
 const Technology = () => {
   return (
@@ -10,7 +11,10 @@ const Technology = () => {
       <div className="TechnologyPageContents">
         <div className="TechnologyPageContent">
           <SidebarOptions />
-          <div className="feed-placeholder" />
+          <div
+            className="feed-placeholder"
+            style={{ backgroundImage: `url(${placeholderImage})` }}
+          />
 
           <Widget />
         </div>

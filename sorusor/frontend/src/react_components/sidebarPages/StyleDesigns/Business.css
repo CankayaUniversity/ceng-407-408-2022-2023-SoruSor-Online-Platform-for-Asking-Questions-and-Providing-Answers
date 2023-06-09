@@ -23,3 +23,13 @@
 .feed-placeholder {
     width: 600px;
 }
+
+.feed-placeholder {
+    width: 800px;
+    /* Adjust to your liking */
+    height: 600px;
+    /* Adjust to your liking */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

@@ -1,21 +1,8 @@
 import React from "react";
 import "../StyleDesigns/DiscoverSpaces.css";
-import SidebarOptions from "../../SidebarOptions";
-import Widget from "../../Widget";
-import Feed from "../../Feed";
 
 const DiscoverSpaces = () => {
-  return (
-    <div className="DiscoverSpaces">
-      <div className="DiscoverSpacesPageContents">
-        <div className="DiscoverSpacesPageContent">
-          <SidebarOptions />
-          <div className="feed-placeholder" />
-          <Widget />
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="a"></div>;
 };
 
 export default DiscoverSpaces;

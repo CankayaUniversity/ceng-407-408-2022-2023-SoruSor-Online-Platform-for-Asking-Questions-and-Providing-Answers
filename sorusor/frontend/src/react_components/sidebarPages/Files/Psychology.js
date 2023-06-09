@@ -3,6 +3,7 @@ import "../StyleDesigns/Psychology.css";
 import SidebarOptions from "../../SidebarOptions";
 import Widget from "../../Widget";
 import Feed from "../../Feed";
+import placeholderImage from "../../../SoruSorDesign/Sidebar/psychology.png";
 
 const Psychology = () => {
   return (
@@ -10,7 +11,10 @@ const Psychology = () => {
       <div className="PsychologyPageContents">
         <div className="PsychologyPageContent">
           <SidebarOptions />
-          <div className="feed-placeholder" />
+          <div
+            className="feed-placeholder"
+            style={{ backgroundImage: `url(${placeholderImage})` }}
+          />
 
           <Widget />
         </div>
