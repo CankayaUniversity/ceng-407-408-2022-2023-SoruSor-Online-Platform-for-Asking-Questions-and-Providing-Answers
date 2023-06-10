@@ -20,10 +20,9 @@ function Login() {
       });
   };
 
-  // Render the login page
   return (
     <div
-      className="loginContainer" // Add a class for styling
+      className="loginContainer"
       style={{ backgroundImage: `url(${PeopleImg})` }} // Set the background image
     >
       <div className="loginContent">

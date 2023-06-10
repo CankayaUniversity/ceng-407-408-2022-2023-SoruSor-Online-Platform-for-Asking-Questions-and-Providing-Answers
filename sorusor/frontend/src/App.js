@@ -52,7 +52,7 @@ function App() {
   }, [dispatch]);
 
   if (loading) {
-    return <div>Loading...</div>; // Replace with your preferred loading UI
+    return <div>Loading...</div>;
   }
 
   if (!user) {
